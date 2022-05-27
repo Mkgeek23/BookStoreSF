@@ -1,0 +1,12 @@
+<template>
+    <c-section-title title="My Orders"></c-section-title>
+    <div>
+        <lightning-datatable
+                key-field="id"
+                data={data}
+                show-row-number-column
+                suppress-bottom-bar
+                columns={columns}>
+        </lightning-datatable>
+    </div>
+</template>

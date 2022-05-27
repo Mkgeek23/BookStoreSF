@@ -1,0 +1,25 @@
+<template>
+    <div class="slds-var-p-around_large item">
+        <p>
+            <template if:true={book.Image_Path__c}>
+            <img src={book.Image_Path__c} alt="Book Cover">
+        </template>
+<template if:false={book.Image_Path__c}>
+            <img src="https://i.ibb.co/590Kfg0/9781444952773.jpg" alt="Book Cover">
+        </template>
+</p>
+<p class="content slds-text-heading_small slds-var-p-top_small title">
+    {book.Name}
+</p>
+<p class="slds-text-color_weak author">
+    {book.Author__r.Name}
+</p>
+<p class="slds-text-color_weak yearOfPublication">
+    &copy;{book.Year_of_publication__c}
+</p>
+<p class="slds-text-color_weak sale-price">
+    <lightning-formatted-number value={book.Price__c} maximum-fraction-digits="2" minimum-fraction-digits="2"></lightning-formatted-number>€
+</p>
+<a class="slds-button slds-button_brand btn" onclick={handleClick} data-event-id={book.Id}>Show details</a>
+</div>
+</template>

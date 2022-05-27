@@ -1,0 +1,62 @@
+<template>
+    <c-section-title title="Your basket"></c-section-title>
+    <template if:false={items}>
+    <div>Your basket is empty</div>
+    </template>
+<template if:true={items}>
+        <div class="slds-grid slds-gutters slds-wrap details-content">
+            <div class="slds-col slds-max-medium-size_4-of-4 slds-size_2-of-3 left-bar">
+                
+        <template if:true={items} for:each={items} for:item="item" for:index="index">
+            <div class="cart-item" key={item.Id}>
+                <template if:true={item.Book__r.Image_Path__c}>
+                <img src={item.Book__r.Image_Path__c} alt="Book Cover">
+            </template>
+<template if:false={item.Book__r.Image_Path__c}>
+                <img src="https://i.ibb.co/590Kfg0/9781444952773.jpg" alt="Book Cover">
+            </template>
+
+<div class="slds-grid slds-gutters slds-wrap details-content flex-center">
+    <div class="name item slds-col slds-max-large-size_4-of-4 slds-size_4-of-7">
+        <a href="#">
+            <h3>
+                {item.Book__r.Name}
+            </h3>
+        </a>
+        <p class="slds-text-color_weak author">
+            {item.Book__r.Author__r.Name}
+        </p>
+        <p class="slds-text-color_weak yearOfPublication">
+            &copy;{item.Book__r.Year_of_publication__c}
+        </p>
+    </div>
+    <div class="price item slds-col slds-max-large-size_2-of-7 slds-size_1-of-7">
+        <lightning-formatted-number value={item.Amount__c} maximum-fraction-digits="2" minimum-fraction-digits="2"></lightning-formatted-number>€
+    </div>
+    <div class="quantity item slds-col slds-max-large-size_3-of-7 slds-size_1-of-7">
+        <c-quantity-counter data-event-id={item.Id} data-event-quantity={item.Quantity__c} value={item.Quantity__c} max={item.Book__r.Availability__c} onvaluechange={updateQuantity}></c-quantity-counter>
+    </div>
+    <div class="delete item slds-col slds-max-large-size_2-of-7 slds-size_1-of-7">
+        <lightning-button-icon icon-name="utility:delete" alternative-text="Delete" class="slds-m-left_xx-small slds-align_absolute-center" title="Delete" data-event-id={item.Id} onclick={handleDelete}></lightning-button-icon>
+    </div>
+</div>
+</div>
+</template>
+
+</div>
+
+<div class="slds-col  slds-max-medium-size_4-of-4 slds-size_1-of-3 right-bar">
+    <lightning-card>
+        <div class="padding-side">
+            <h1>Total:&nbsp;
+                <lightning-formatted-number value={total} maximum-fraction-digits="2" minimum-fraction-digits="2"></lightning-formatted-number>€
+            </h1>
+
+            <c-button value="Checkout now" onhandleclick={handleCreateOrder} disabled={btnDisabled}></c-button>
+        </div>
+    </lightning-card>
+</div>
+</div>
+</template>
+
+</template>

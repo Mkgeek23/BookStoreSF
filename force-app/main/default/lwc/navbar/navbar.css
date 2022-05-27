@@ -1,0 +1,211 @@
+.navigation {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    background-color: white;
+    border-bottom: 0.1rem solid #f0f0f0;
+}
+
+.left-nav,
+.right-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-nav .item,
+.right-nav .item {
+    margin-left: 5px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.left-nav .item a,
+.right-nav .item a {
+    padding: 16px;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    text-decoration: none;
+    color: #515151;
+    -webkit-transition: color .2s;
+    -o-transition: color .2s;
+    transition: color .2s;
+}
+
+.left-nav .item a:hover,
+.right-nav .item a:hover {
+    color: var(--pink);
+}
+
+.right-nav {
+    margin-left: auto;
+    order: 2;
+}
+
+.logoContainer {
+    background-image: var(--lwc-brandLogoImage);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 99;
+    position: relative;
+    max-width: 100%;
+    width: 125px;
+    max-height: 60px;
+    display: block;
+    outline: 0;
+    height: 60px;
+    margin-right: 16px;
+}
+
+.a-btn:hover {
+    text-decoration: none;
+}
+
+.cart-icon {
+    --sds-c-icon-color-foreground: #515151;
+    --sds-c-icon-color-background: white;
+}
+
+.cart-icon:hover {
+    --sds-c-icon-color-foreground: var(--pink);
+    cursor: pointer;
+}
+
+.nav-icon {
+    display: none;
+    fill: var(var(--pink), var(var(--pink), var(--lwc-colorTextIconInverse, rgb(255, 255, 255))));
+    --slds-c-icon-color-foreground: var(--pink);
+    --slds-c-icon-color-foreground-default: var(--pink);
+}
+
+.nav-icon:hover {
+    cursor: pointer;
+}
+
+.mobile-nav {
+    display: none;
+}
+
+
+/* The Overlay (background) */
+
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    /* Stay in place */
+    z-index: 10000;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0, 0, 0);
+    /* Black fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/opacity */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+
+/* Position the content inside the overlay */
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    /* 25% from the top */
+    width: 100%;
+    /* 100% width */
+    text-align: center;
+    /* Centered text/links */
+    margin-top: 30px;
+    /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+
+/* The navigation links inside the overlay */
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #ff007f;
+    display: block;
+    /* Display block instead of inline */
+    transition: 0.3s;
+    /* Transition effects on hover (color) */
+}
+
+
+/* When you mouse over the navigation links, change their color */
+
+.overlay a:hover,
+.overlay a:focus {
+    color: #ff007f;
+}
+
+
+/* Position the close button (top right corner) */
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+
+@media screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 20px
+    }
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .nav-item:not(:first-child) {
+        display: none;
+    }
+    .nav-item.icon {
+        float: right;
+        display: block;
+    }
+    .nav-icon {
+        display: block;
+    }
+    .mobile-nav {
+        display: block;
+    }
+    .overlay {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .nav-item.responsive {
+        position: relative;
+    }
+    .nav-item.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .nav-item.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}

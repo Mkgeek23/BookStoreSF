@@ -1,0 +1,24 @@
+<template>
+
+    <template if:true={userDetails}>
+    <h1>User settings</h1>
+    <fieldset  class="slds-form-element"><legend class="slds-form-element__label">Profile</legend>
+    <lightning-input type="text" label="First Name" data-field="FirstName" value={userDetails.FirstName} onchange={handleChange}></lightning-input>
+    <lightning-input type="text" label="Last Name" data-field="LastName" value={userDetails.LastName} onchange={handleChange}></lightning-input>
+    <lightning-input type="tel" label="Phone" data-field="Phone" value={userDetails.Phone} onchange={handleChange}></lightning-input>
+    <lightning-input type="email" label="Email address" data-field="Email" value={userDetails.Email} onchange={handleChange}></lightning-input>
+    </fieldset>
+    <br>
+    <fieldset  class="slds-form-element"><legend class="slds-form-element__label">Address</legend>
+    <lightning-input type="text" label="Street" data-field="Street" value={userDetails.Street} onchange={handleChange}></lightning-input>
+    <lightning-input type="text" label="City" data-field="City" value={userDetails.City} onchange={handleChange}></lightning-input>
+    <lightning-input type="text" label="State" data-field="State" value={userDetails.State} onchange={handleChange}></lightning-input>
+    <lightning-input type="text" label="PostalCode" data-field="PostalCode" value={userDetails.PostalCode} onchange={handleChange}></lightning-input>
+    <lightning-input type="text" label="Country" data-field="Country" value={userDetails.Country} onchange={handleChange}></lightning-input>
+    </fieldset>
+    <div style="width: 33%; margin: 0 auto">
+        <c-button onhandleclick={handleUpdateUserDetails} value="Update" onchange={handleChange} disabled={btnDisabled} icon-name="utility:edit_form"></c-button>
+    </div>
+
+</template>
+</template>

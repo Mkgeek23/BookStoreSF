@@ -1,0 +1,17 @@
+<template>
+    <div class="footer">
+        <div class="left">
+            &copy;2022 Maciej Olech Bookstores sp. z o.o. All rights reserved.</div>
+        <div class="right">
+            <nav>
+                <ul>
+                    <li><a href={homeUrl}>Home</a></li>
+                    <template if:true={userId}>
+                    <li><a href={booksUrl}>Books</a></li>
+                    <li><a href={ordersUrl}>Orders</a></li>
+                </template>
+</ul>
+</nav>
+</div>
+</div>
+</template>

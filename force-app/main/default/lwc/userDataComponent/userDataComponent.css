@@ -1,0 +1,19 @@
+.slds-form-element__label {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    display: inline-block;
+    color: var(--lwc-colorTextLabel, rgb(148, 148, 148));
+    font-size: var(0.75rem);
+    padding-right: var(--lwc-spacingXSmall, 0.5rem);
+    padding-top: var(--lwc-spacingXxSmall, 0.25rem);
+    margin-bottom: var(--lwc-spacingXxxSmall, 0.125rem);
+}
+
+legend {
+    border: 0;
+    padding: 0;
+    font-weight: var(--lwc-fontWeightBold, 700);
+}

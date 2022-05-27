@@ -1,0 +1,7 @@
+<template>
+    <c-section-title title="Filters"></c-section-title>
+    <c-filter-number value={priceMin} name={priceMinName} label="Price min" onhandlechange={handlePriceMin} placeholder="Enter the minimum price"></c-filter-number>
+    <c-filter-number value={priceMax} name={priceMaxName} label="Price max" onhandlechange={handlePriceMax} placeholder="Enter the maximum price"></c-filter-number>
+    <c-filter-combobox onhandlechange={handleGenre} value={genre} placeholder="All" label="Genre" options={genreList}></c-filter-combobox>
+    <c-button onhandleclick={handleFilters} value="Filter Now" icon-name="utility:filterList"></c-button>
+</template>

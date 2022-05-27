@@ -1,0 +1,12 @@
+<template>
+    <h1 class="price"><lightning-formatted-number value={book.Price__c} maximum-fraction-digits="2" minimum-fraction-digits="2"></lightning-formatted-number>€</h1>
+    <template if:true={userId}>
+        <c-quantity-counter onvaluechange={hanldeValueChange} value={quantity} max={book.Availability__c}></c-quantity-counter>
+        <c-button icon-name="utility:cart" value="Add to cart" onhandleclick={addToBasket} disabled={btnDisabled}></c-button>
+        <c-add-to-cart-modal-component is-modal-open={isOpenModal} items={sum} total={total} onclosemodal={closeModal}></c-add-to-cart-modal-component>
+    </template>
+<template if:false={userId}>
+    <h1>You must be logged in to buy this book.</h1>
+        
+    </template>
+</template>

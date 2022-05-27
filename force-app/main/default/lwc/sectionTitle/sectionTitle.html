@@ -1,0 +1,11 @@
+<template>
+    <div class="heading">
+        <h3>
+            {title}
+        </h3>
+        <template if:true={linkText}>
+            <a onclick={navigateToLink}>{linkText}</a>
+        </template>
+</div>
+
+</template>

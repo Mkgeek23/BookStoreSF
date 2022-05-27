@@ -1,0 +1,17 @@
+.THIS.container {
+    position: relative;
+    max-width: 1440px;
+    z-index: 1;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.THIS.container .mainContentArea {
+    min-height: calc(100vh - 80px - 4rem);
+}
+
+.THIS.footer-container {
+    background-color: #415a6c;
+    color: white;
+}

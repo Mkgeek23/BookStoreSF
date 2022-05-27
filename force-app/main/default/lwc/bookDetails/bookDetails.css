@@ -1,0 +1,59 @@
+.details-content {
+    padding: 2px;
+}
+
+.details-content .left-bar img {
+    display: block;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+    max-width: 95%;
+}
+
+.details-content .title {
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-bottom: 0.1rem solid #f0f0f0;
+}
+
+.details-content .price {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #ff0072;
+    border-bottom: 0.1rem solid #f0f0f0;
+}
+
+.details-content .main-content {
+    border-right: 0.1rem solid #f0f0f0;
+}
+
+label {
+    font-weight: bold;
+}
+
+label:after {
+    margin-left: 1px;
+    content: ':';
+}
+
+li {
+    line-height: 1.6rem;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.sidebar {
+    text-align: center;
+}
+
+.genre:not(:last-child):after {
+    content: ', ';
+}
+
+.col {
+    margin-bottom: 16px;
+}

@@ -1,0 +1,18 @@
+<template>
+    <template if:false={disabled}>
+        <div class="my-btn" onclick={handleClick}>
+            <template if:true={iconName}>
+                <lightning-icon class="my-btn-icon" icon-name={iconName} alternative-text="User" title="User" size="x-small"></lightning-icon>&nbsp;
+            </template>{value}
+</div>
+</template>
+<template if:true={disabled}>
+    <div class="my-btn disabled">
+        <template if:true={iconName}>
+            <lightning-icon class="my-btn-icon" icon-name={iconName} alternative-text="User" title="User" size="x-small"></lightning-icon>&nbsp;
+        </template>{value}
+</div>
+</template>
+
+
+</template>

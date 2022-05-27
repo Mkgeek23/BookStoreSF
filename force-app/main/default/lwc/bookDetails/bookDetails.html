@@ -1,0 +1,46 @@
+<template>
+    <c-section-title title="Book Details"></c-section-title>
+	<div class="slds-grid slds-gutters slds-wrap details-content">
+        <template if:true={book}>
+		<div class="slds-col slds-max-medium-size_4-of-4 slds-size_1-of-4 slds-order_2 slds-medium-order_1 left-bar col">
+            <template if:true={book.Image_Path__c}>
+            <img src={book.Image_Path__c} alt="Book Cover">
+        </template>
+<template if:false={book.Image_Path__c}>
+            <img src="https://i.ibb.co/590Kfg0/9781444952773.jpg" alt="Book Cover">
+        </template>
+</div>
+<div class="slds-col slds-max-medium-size_4-of-4 slds-size_2-of-4 slds-order_1 slds-medium-order_2 main-content col">
+    <h1 class="title">{book.Name}</h1>
+    <ul>
+        <li><label>Author</label> {book.Author__r.Name}</li>
+        <li><label>Publication date</label> {book.Year_of_publication__c}</li>
+        <template if:true={genres}>
+            <li><label>Genre</label>&nbsp;
+            <template for:each={genres} for:item="genre">
+            <span class="genre" key={genre}> <a data-field={genre} onclick={navigateToInternalPage}>{genre}</a></span>
+            </template>
+        </li>
+        </template>
+        <li><label>ISBN</label> {book.ISBN_Code__c}</li>
+        <li><label>Available</label> {book.Availability__c}</li>
+        <li><label>Sold</label> {book.Number_of_sold__c}</li>
+        <li>
+            <label>Descrition</label><br>
+            <lightning-formatted-rich-text value={book.Description__c}></lightning-formatted-rich-text>
+
+        </li>
+    </ul>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+</div>
+<div class="slds-col slds-max-medium-size_4-of-4 slds-size_1-of-4 slds-order_3 sidebar col">
+    <c-checkout-component book={book}></c-checkout-component>
+</div>
+</template>
+</div>
+</template>

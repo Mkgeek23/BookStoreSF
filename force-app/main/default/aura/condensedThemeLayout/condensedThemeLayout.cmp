@@ -1,0 +1,19 @@
+<aura:component implements="forceCommunity:themeLayout" access="global" description="Sample Custom Theme Layout">
+    <ltng:require styles="{!$Resource.myStyles}" />
+    <aura:attribute name="search" type="Aura.Component[]" required="false" />
+    <aura:attribute name="profileMenu" type="Aura.Component[]" required="false" />
+    <aura:attribute name="navBar" type="Aura.Component[]" required="false" />
+    <aura:attribute name="newHeader" type="Aura.Component[]" required="false" />
+    <aura:attribute name="options" type="String[]" default="['Option 1', 'Option 2']" />
+    <div class="container">
+        <div class="navigation">
+            <c:navbar></c:navbar>
+        </div>
+        <div class="mainContentArea">
+            {!v.body}
+        </div>
+    </div>
+    <footer class="footer-container">
+        <c:footer></c:footer>
+    </footer>
+</aura:component>

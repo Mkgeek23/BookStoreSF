@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="Show Toast Example"  icon-name="custom:custom14">
+        <lightning-messages></lightning-messages>
+        <div class="slds-m-around_large">
+            <lightning-button  name="success" 
+                                onclick={handleClick} 
+                                variant="Success" 
+                                label="Success Notification"></lightning-button>
+        </div>
+        <div class="slds-m-around_large">
+            <lightning-button  name="error" 
+                                onclick={handleClick} 
+                                variant="destructive" 
+                                label="Error Notification"></lightning-button>
+        </div>
+        <div class="slds-m-around_large">
+            <lightning-button  name="warning" 
+                                variant="brand"
+                                onclick={handleClick} 
+                                label="Warning Notification"></lightning-button>
+        </div>
+        <div class="slds-m-around_large">
+        <lightning-button  name="info" 
+                            variant="neutral"
+                            onclick={handleClick} 
+                            label="Info Notification"></lightning-button>
+        </div>
+    </lightning-card>
+</template>

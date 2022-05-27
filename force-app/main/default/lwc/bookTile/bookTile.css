@@ -1,0 +1,73 @@
+img {
+    width: 150px;
+    height: 200px;
+    margin: 0 auto;
+    display: block;
+}
+
+p {
+    font-size: .95rem;
+    line-height: 150%;
+}
+
+.yearOfPublication {
+    color: #4d4d4d;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 2rem;
+    max-width: 15rem;
+    line-height: 2rem;
+    overflow: hidden;
+}
+
+.content {
+    display: block;
+    margin: 0 auto;
+    font-weight: bold;
+}
+
+.title {
+    color: #333;
+    font-size: 1.2rem;
+    text-decoration: none;
+    line-height: 1.4rem;
+    height: 3.6rem;
+    overflow: hidden;
+}
+
+.sale-price {
+    color: var(--pink);
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    height: 2.5rem;
+    margin-top: 0.5rem;
+}
+
+.author {
+    color: #4d4d4d;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 1.5rem;
+    max-width: 15rem;
+    line-height: 2rem;
+    overflow: hidden;
+}
+
+.btn {
+    border: 0;
+    margin: 0;
+    background: var(--pink);
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 0.4rem;
+    width: 100%;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: none;
+    display: inline-block;
+    transition: background-color .2s;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+}

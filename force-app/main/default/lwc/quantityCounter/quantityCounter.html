@@ -1,0 +1,8 @@
+<template>
+    <div class="quantity buttons_added">
+        <div class="label">Quantity</div>
+        <input type="button" value="-" class="minus" onclick={minus}>
+        <input onchange={handleChnage} type="number" step="1" min={min} max={max} name="quantity" value={value} title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+        <input type="button" value="+" class="plus" onclick={plus}>
+    </div>
+</template>

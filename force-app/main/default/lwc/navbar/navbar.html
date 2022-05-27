@@ -1,0 +1,83 @@
+<template>
+    <div class="navigation slds-clearfix">
+        <!-- The overlay -->
+        <template if:true={isNavOpen}>
+<div id="myNav" class="overlay">
+
+    <!-- Button to close the overlay navigation -->
+    <a href="javascript:void(0)" class="closebtn" onclick={closeNav}>&times;</a>
+  
+    <!-- Overlay content -->
+    <div class="overlay-content">
+        <a href={url} onclick={navigateToHomePage}>Home</a>
+        <a href={url} onclick={navigateToBooksPage}>Books</a>
+        <template if:true={userId}>
+        <a href={url} onclick={navigateToOrdersPage}>Orders</a>
+        <a href={url} onclick={navigateToCartPage}>Cart</a>
+        <a href={url} onclick={navigateToUserDetails}>User Details</a>
+        <a href={url} onclick={logout}>Sign Out</a>
+    </template>
+
+<template if:false={userId}>
+    <a href={url} onclick={navigateToLogin}>Sign In</a>
+</template>
+</div>
+
+</div>
+</template>
+
+<div class="left-nav">
+    <!-- <div>
+                <a href={url} onclick={navigateToHomePage}>
+                    <lightning-icon icon-name="utility:home" alternative-text="Home" title="Home" size="x-small"></lightning-icon></a>
+            </div> -->
+
+    <div class="logoContainer">
+
+    </div>
+
+    <template for:each={menuItems} for:item="item" for:index="i">
+      <div key={item.i}>
+          <template if:true={item.imageUrl}>
+              <img
+                  data-label={item.label}
+                  src={item.imageUrl}
+                 
+                  onclick={navigateToItem}
+              />
+          </template>
+</div>
+</template>
+<div class="item nav-item">
+    <a href={url} onclick={navigateToHomePage}>Home</a>
+</div>
+
+<div class="item nav-item">
+    <a href={url} onclick={navigateToBooksPage}>Books</a>
+</div>
+
+<template if:true={userId}>
+<div class="item nav-item">
+    <a href={url} onclick={navigateToOrdersPage}>Orders</a>
+</div>
+</template>
+</div>
+
+<div class="slds-float_right right-nav">
+    <lightning-icon class="nav-icon" onclick={openNav} icon-name="utility:rows" alternative-text="Connected" title="Connected">
+    </lightning-icon>
+    <div class="nav-item">
+        <template if:true={userId}>
+            <lightning-avatar size="large" variant="circle" onclick={navigateToCartPage} initials="" fallback-icon-name="standard:webcart" alternative-text="Shopping Cart" class="slds-m-right_small cart-icon"></lightning-avatar>
+        </template>
+        <c-profile-component></c-profile-component>
+    </div>
+    <!-- <c-button icon-name="utility:cart" value="" onhandleclick={navigateToCartPage}></c-button> -->
+
+
+    <!-- <div class="login-btn">
+                <lightning-icon class="btn-icon" icon-name="utility:user" alternative-text="User" title="User" size="x-small"></lightning-icon> Sign In
+            </div> -->
+</div>
+</div>
+</template>

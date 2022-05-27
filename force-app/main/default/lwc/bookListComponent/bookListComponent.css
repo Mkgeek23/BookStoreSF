@@ -1,0 +1,28 @@
+body {
+    font-family: Roboto, sans-serif;
+}
+
+.listHeader {
+    overflow: hidden;
+    border-bottom: 1px solid lightgray;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.listFooter {
+    overflow: hidden;
+    border-top: 1px solid lightgray;
+    padding-top: 16px;
+}

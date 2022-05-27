@@ -1,0 +1,9 @@
+<template>
+    <div class="pagination">
+<template if:true={pages}>
+            <template for:each={pages} for:item="pg">
+                    <a key={pg.label} data-field={pg.value} onclick={handleChangePage} class={pg.class}>{pg.label}</a>
+                </template>
+</template>
+</div>
+</template>

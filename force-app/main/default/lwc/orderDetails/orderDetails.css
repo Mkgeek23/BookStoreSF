@@ -1,0 +1,16 @@
+h1 {
+    font-size: 1.4rem;
+}
+
+label {
+    font-weight: bold;
+}
+
+label:after {
+    margin-left: 1px;
+    content: ':';
+}
+
+li {
+    line-height: 1.6rem;
+}

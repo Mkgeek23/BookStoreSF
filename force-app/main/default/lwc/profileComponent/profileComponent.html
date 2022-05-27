@@ -1,0 +1,16 @@
+<template>
+    <template if:true={userId}>
+        <!-- <c-button icon-name="utility:user" value="Log Out" onhandleclick={logout}></c-button>
+        <c-button icon-name="utility:user" value="User Details" onhandleclick={navigateToUserDetailsPage}></c-button> -->
+        <lightning-avatar size="large" onclick={toggleDropdown} variant="circle" initials=""  fallback-icon-name="standard:avatar" alternative-text="Profile" class="slds-m-right_small profile-icon"></lightning-avatar>
+        <ul data-id="dropdown-menu" class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2" data-popper-placement="bottom-end" style="position: absolute; margin: 0px; transform: translate(-49px, 16px);">
+            <li><a class="dropdown-item" onclick={navigateToUserDetailsPage}><lightning-icon class="my-btn-icon" icon-name="utility:settings" alternative-text="User" title="User" size="x-small"></lightning-icon>&nbsp;Settings</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" onclick={logout}><lightning-icon class="my-btn-icon" icon-name="utility:logout" alternative-text="User" title="User" size="x-small"></lightning-icon>&nbsp;Sign out</a></li>
+          </ul>
+    </template>
+<template if:false={userId}>
+            <c-button icon-name="utility:user" value="Sign In" onhandleclick={navigateToLoginPage}></c-button>
+    </template>
+
+</template>

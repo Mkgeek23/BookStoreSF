@@ -1,0 +1,23 @@
+.heading {
+    overflow: hidden;
+    border-bottom: 1px solid #515151;
+    margin: 0 0 20px;
+}
+
+.heading h3 {
+    float: left;
+    color: #515151;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 10px 0;
+    position: relative;
+    padding-top: 0;
+    line-height: 1.33333333;
+}
+
+.heading a {
+    float: right;
+    font-size: 1rem;
+    padding-top: 8px;
+}
